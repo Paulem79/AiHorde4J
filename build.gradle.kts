@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 
-group = "io.github.aihorde4j"
+group = "net.paulem.aihorde4j"
 version = "1.0.0"
 
 java {

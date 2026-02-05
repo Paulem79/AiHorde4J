@@ -21,16 +21,30 @@ A Java wrapper library for the [AI Horde](https://stablehorde.net/) API (v2). Th
 ### Gradle (Kotlin DSL)
 
 ```kotlin
+repositories {
+    maven {
+        name = "paulem-releases"
+        url = uri("https://maven.paulem.net/releases/")
+    }
+}
+
 dependencies {
-    implementation("io.github.aihorde4j:AiHorde4J:1.0.0")
+    implementation("net.paulem.aihorde4j:AiHorde4J:1.+")
 }
 ```
 
 ### Gradle (Groovy)
 
 ```groovy
+repositories {
+    maven {
+        name = "paulem-releases"
+        url = uri("https://maven.paulem.net/releases/")
+    }
+}
+
 dependencies {
-    implementation 'io.github.aihorde4j:AiHorde4J:1.0.0'
+    implementation 'net.paulem.aihorde4j:AiHorde4J:1.+'
 }
 ```
 
@@ -210,7 +224,7 @@ git clone https://github.com/Paulem79/AiHorde4J.git
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Contributing
 

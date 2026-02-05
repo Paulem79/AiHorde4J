@@ -1,10 +1,10 @@
-package io.github.aihorde4j;
+package net.paulem.aihorde4j;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.aihorde4j.client.HordeClient;
-import io.github.aihorde4j.dto.params.ModelGenerationInputStable;
-import io.github.aihorde4j.dto.request.GenerationInputStable;
-import io.github.aihorde4j.dto.response.*;
+import net.paulem.aihorde4j.client.HordeClient;
+import net.paulem.aihorde4j.dto.params.ModelGenerationInputStable;
+import net.paulem.aihorde4j.dto.request.GenerationInputStable;
+import net.paulem.aihorde4j.dto.response.*;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;

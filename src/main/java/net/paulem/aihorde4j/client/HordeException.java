@@ -1,4 +1,4 @@
-package io.github.aihorde4j.client;
+package net.paulem.aihorde4j.client;
 
 /**
  * Exception thrown when a Horde API operation fails.

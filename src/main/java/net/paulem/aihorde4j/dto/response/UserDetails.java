@@ -1,4 +1,4 @@
-package io.github.aihorde4j.dto.response;
+package net.paulem.aihorde4j.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

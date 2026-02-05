@@ -1,13 +1,13 @@
-package io.github.aihorde4j.client;
+package net.paulem.aihorde4j.client;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.aihorde4j.api.HordeApi;
-import io.github.aihorde4j.dto.params.ModelGenerationInputKobold;
-import io.github.aihorde4j.dto.params.ModelGenerationInputStable;
-import io.github.aihorde4j.dto.request.GenerationInputKobold;
-import io.github.aihorde4j.dto.request.GenerationInputStable;
-import io.github.aihorde4j.dto.response.*;
+import net.paulem.aihorde4j.api.HordeApi;
+import net.paulem.aihorde4j.dto.params.ModelGenerationInputKobold;
+import net.paulem.aihorde4j.dto.params.ModelGenerationInputStable;
+import net.paulem.aihorde4j.dto.request.GenerationInputKobold;
+import net.paulem.aihorde4j.dto.request.GenerationInputStable;
+import net.paulem.aihorde4j.dto.response.*;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;

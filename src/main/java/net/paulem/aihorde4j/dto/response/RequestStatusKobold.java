@@ -1,13 +1,15 @@
-package io.github.aihorde4j.dto.response;
+package net.paulem.aihorde4j.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 /**
- * Response from check endpoint containing the status of a generation request.
+ * Response containing the final status and results of a Kobold text generation.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RequestStatusCheck {
+public class RequestStatusKobold {
     
     @JsonProperty("finished")
     private Integer finished;
@@ -39,15 +41,17 @@ public class RequestStatusCheck {
     @JsonProperty("is_possible")
     private Boolean isPossible;
     
-    public RequestStatusCheck() {
+    @JsonProperty("generations")
+    private List<GenerationKobold> generations;
+    
+    public RequestStatusKobold() {
     }
     
-    // Getters
     public Integer getFinished() {
         return finished;
     }
     
-    public RequestStatusCheck setFinished(Integer finished) {
+    public RequestStatusKobold setFinished(Integer finished) {
         this.finished = finished;
         return this;
     }
@@ -56,7 +60,7 @@ public class RequestStatusCheck {
         return processing;
     }
     
-    public RequestStatusCheck setProcessing(Integer processing) {
+    public RequestStatusKobold setProcessing(Integer processing) {
         this.processing = processing;
         return this;
     }
@@ -65,7 +69,7 @@ public class RequestStatusCheck {
         return restarted;
     }
     
-    public RequestStatusCheck setRestarted(Integer restarted) {
+    public RequestStatusKobold setRestarted(Integer restarted) {
         this.restarted = restarted;
         return this;
     }
@@ -74,7 +78,7 @@ public class RequestStatusCheck {
         return waiting;
     }
     
-    public RequestStatusCheck setWaiting(Integer waiting) {
+    public RequestStatusKobold setWaiting(Integer waiting) {
         this.waiting = waiting;
         return this;
     }
@@ -83,7 +87,7 @@ public class RequestStatusCheck {
         return done;
     }
     
-    public RequestStatusCheck setDone(Boolean done) {
+    public RequestStatusKobold setDone(Boolean done) {
         this.done = done;
         return this;
     }
@@ -92,7 +96,7 @@ public class RequestStatusCheck {
         return faulted;
     }
     
-    public RequestStatusCheck setFaulted(Boolean faulted) {
+    public RequestStatusKobold setFaulted(Boolean faulted) {
         this.faulted = faulted;
         return this;
     }
@@ -101,7 +105,7 @@ public class RequestStatusCheck {
         return waitTime;
     }
     
-    public RequestStatusCheck setWaitTime(Integer waitTime) {
+    public RequestStatusKobold setWaitTime(Integer waitTime) {
         this.waitTime = waitTime;
         return this;
     }
@@ -110,7 +114,7 @@ public class RequestStatusCheck {
         return queuePosition;
     }
     
-    public RequestStatusCheck setQueuePosition(Integer queuePosition) {
+    public RequestStatusKobold setQueuePosition(Integer queuePosition) {
         this.queuePosition = queuePosition;
         return this;
     }
@@ -119,7 +123,7 @@ public class RequestStatusCheck {
         return kudos;
     }
     
-    public RequestStatusCheck setKudos(Double kudos) {
+    public RequestStatusKobold setKudos(Double kudos) {
         this.kudos = kudos;
         return this;
     }
@@ -128,8 +132,17 @@ public class RequestStatusCheck {
         return isPossible;
     }
     
-    public RequestStatusCheck setIsPossible(Boolean isPossible) {
+    public RequestStatusKobold setIsPossible(Boolean isPossible) {
         this.isPossible = isPossible;
+        return this;
+    }
+    
+    public List<GenerationKobold> getGenerations() {
+        return generations;
+    }
+    
+    public RequestStatusKobold setGenerations(List<GenerationKobold> generations) {
+        this.generations = generations;
         return this;
     }
     
@@ -149,7 +162,7 @@ public class RequestStatusCheck {
     
     @Override
     public String toString() {
-        return "RequestStatusCheck{" +
+        return "RequestStatusKobold{" +
                 "finished=" + finished +
                 ", processing=" + processing +
                 ", restarted=" + restarted +
@@ -160,6 +173,7 @@ public class RequestStatusCheck {
                 ", queuePosition=" + queuePosition +
                 ", kudos=" + kudos +
                 ", isPossible=" + isPossible +
+                ", generations=" + generations +
                 '}';
     }
 }

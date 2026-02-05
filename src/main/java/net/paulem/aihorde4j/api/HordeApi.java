@@ -1,8 +1,8 @@
-package io.github.aihorde4j.api;
+package net.paulem.aihorde4j.api;
 
-import io.github.aihorde4j.dto.request.GenerationInputKobold;
-import io.github.aihorde4j.dto.request.GenerationInputStable;
-import io.github.aihorde4j.dto.response.*;
+import net.paulem.aihorde4j.dto.request.GenerationInputKobold;
+import net.paulem.aihorde4j.dto.request.GenerationInputStable;
+import net.paulem.aihorde4j.dto.response.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 

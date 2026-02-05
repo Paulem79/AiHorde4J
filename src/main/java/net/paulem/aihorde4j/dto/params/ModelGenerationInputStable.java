@@ -1,4 +1,4 @@
-package io.github.aihorde4j.dto.params;
+package net.paulem.aihorde4j.dto.params;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
