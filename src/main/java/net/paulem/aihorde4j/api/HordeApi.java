@@ -23,7 +23,7 @@ public interface HordeApi {
      * @param request The generation request parameters
      * @return A call that returns the async request ID
      */
-    @POST("/v2/generate/async")
+    @POST("v2/generate/async")
     Call<RequestAsync> generateImageAsync(
             @Header("apikey") String apiKey,
             @Header("Client-Agent") String clientAgent,
@@ -36,7 +36,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the status check
      */
-    @GET("/v2/generate/check/{id}")
+    @GET("v2/generate/check/{id}")
     Call<RequestStatusCheck> checkImageGeneration(
             @Path("id") String id
     );
@@ -47,7 +47,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the full status with generated images
      */
-    @GET("/v2/generate/status/{id}")
+    @GET("v2/generate/status/{id}")
     Call<RequestStatusStable> getImageGenerationStatus(
             @Path("id") String id
     );
@@ -58,7 +58,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the status
      */
-    @DELETE("/v2/generate/status/{id}")
+    @DELETE("v2/generate/status/{id}")
     Call<RequestStatusStable> cancelImageGeneration(
             @Path("id") String id
     );
@@ -73,7 +73,7 @@ public interface HordeApi {
      * @param request The generation request parameters
      * @return A call that returns the async request ID
      */
-    @POST("/v2/generate/text/async")
+    @POST("v2/generate/text/async")
     Call<RequestAsync> generateTextAsync(
             @Header("apikey") String apiKey,
             @Header("Client-Agent") String clientAgent,
@@ -86,7 +86,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the status check
      */
-    @GET("/v2/generate/text/check/{id}")
+    @GET("v2/generate/text/check/{id}")
     Call<RequestStatusCheck> checkTextGeneration(
             @Path("id") String id
     );
@@ -97,7 +97,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the full status with generated text
      */
-    @GET("/v2/generate/text/status/{id}")
+    @GET("v2/generate/text/status/{id}")
     Call<RequestStatusKobold> getTextGenerationStatus(
             @Path("id") String id
     );
@@ -108,7 +108,7 @@ public interface HordeApi {
      * @param id The request UUID
      * @return A call that returns the status
      */
-    @DELETE("/v2/generate/text/status/{id}")
+    @DELETE("v2/generate/text/status/{id}")
     Call<RequestStatusKobold> cancelTextGeneration(
             @Path("id") String id
     );
@@ -122,7 +122,7 @@ public interface HordeApi {
      * @param clientAgent The client agent header
      * @return A call that returns user details
      */
-    @GET("/v2/find_user")
+    @GET("v2/find_user")
     Call<UserDetails> findUser(
             @Header("apikey") String apiKey,
             @Header("Client-Agent") String clientAgent
@@ -137,7 +137,7 @@ public interface HordeApi {
      * @param minCount Minimum number of workers
      * @return A call that returns the list of active models
      */
-    @GET("/v2/status/models")
+    @GET("v2/status/models")
     Call<List<ActiveModel>> getActiveModels(
             @Query("type") String type,
             @Query("min_count") Integer minCount
@@ -148,6 +148,6 @@ public interface HordeApi {
      *
      * @return A call that returns the list of active models
      */
-    @GET("/v2/status/models")
+    @GET("v2/status/models")
     Call<List<ActiveModel>> getActiveModels();
 }
