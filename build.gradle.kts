@@ -88,14 +88,15 @@ publishing {
             }
         }
     }
-    
+
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Paulem79/AiHorde4J")
+            name = "paulem-releases"
+            url = uri("https://maven.paulem.net/releases")
+
             credentials {
-                username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String? ?: ""
-                password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.key") as String? ?: ""
+                username = System.getenv("PAULEM_MAVEN_USER")
+                password = System.getenv("PAULEM_MAVEN_PASSWORD")
             }
         }
     }
