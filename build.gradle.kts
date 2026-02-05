@@ -45,6 +45,16 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.javadoc {
+    options {
+        (this as StandardJavadocDocletOptions).apply {
+            encoding = "UTF-8"
+            charSet = "UTF-8"
+            addBooleanOption("Xdoclint:none", true)
+        }
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
@@ -61,6 +71,31 @@ publishing {
                         url.set("https://opensource.org/licenses/MIT")
                     }
                 }
+                
+                developers {
+                    developer {
+                        id.set("Paulem79")
+                        name.set("Paulem79")
+                        url.set("https://github.com/Paulem79")
+                    }
+                }
+                
+                scm {
+                    connection.set("scm:git:git://github.com/Paulem79/AiHorde4J.git")
+                    developerConnection.set("scm:git:ssh://github.com/Paulem79/AiHorde4J.git")
+                    url.set("https://github.com/Paulem79/AiHorde4J")
+                }
+            }
+        }
+    }
+    
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Paulem79/AiHorde4J")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: project.findProperty("gpr.user") as String? ?: ""
+                password = System.getenv("GITHUB_TOKEN") ?: project.findProperty("gpr.key") as String? ?: ""
             }
         }
     }
