@@ -79,7 +79,7 @@ publishing {
                         url.set("https://github.com/Paulem79")
                     }
                 }
-                
+
                 scm {
                     connection.set("scm:git:git://github.com/Paulem79/AiHorde4J.git")
                     developerConnection.set("scm:git:ssh://github.com/Paulem79/AiHorde4J.git")
@@ -95,8 +95,8 @@ publishing {
             url = uri("https://maven.paulem.net/releases")
 
             credentials {
-                username = System.getenv("PAULEM_MAVEN_USER")
-                password = System.getenv("PAULEM_MAVEN_PASSWORD")
+                username = findProperty("PAULEM_MAVEN_USER") as? String ?: System.getenv("PAULEM_MAVEN_USER")
+                password = findProperty("PAULEM_MAVEN_PASSWORD") as? String ?: System.getenv("PAULEM_MAVEN_PASSWORD")
             }
         }
     }

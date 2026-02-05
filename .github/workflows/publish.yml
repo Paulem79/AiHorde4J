@@ -43,7 +43,7 @@ jobs:
             build/libs/
             build/docs/javadoc/
 
-      - name: Upload to GitHub Packages
+      - name: Publish
         run: ./gradlew publish
         env:
           PAULEM_MAVEN_USER: ${{ secrets.PAULEM_MAVEN_USER }}
