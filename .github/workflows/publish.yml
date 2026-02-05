@@ -48,4 +48,3 @@ jobs:
         env:
           PAULEM_MAVEN_USER: ${{ secrets.PAULEM_MAVEN_USER }}
           PAULEM_MAVEN_PASSWORD: ${{ secrets.PAULEM_MAVEN_PASSWORD }}
-        continue-on-error: true
