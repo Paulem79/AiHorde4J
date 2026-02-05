@@ -29,18 +29,7 @@ public interface HordeApi {
             @Header("Client-Agent") String clientAgent,
             @Body GenerationInputStable request
     );
-    
-    /**
-     * Checks the status of an image generation request.
-     *
-     * @param id The request UUID
-     * @return A call that returns the status check
-     */
-    @GET("v2/generate/check/{id}")
-    Call<RequestStatusCheck> checkImageGeneration(
-            @Path("id") String id
-    );
-    
+
     /**
      * Gets the full status and results of an image generation request.
      *
@@ -79,18 +68,7 @@ public interface HordeApi {
             @Header("Client-Agent") String clientAgent,
             @Body GenerationInputKobold request
     );
-    
-    /**
-     * Checks the status of a text generation request.
-     *
-     * @param id The request UUID
-     * @return A call that returns the status check
-     */
-    @GET("v2/generate/text/check/{id}")
-    Call<RequestStatusCheck> checkTextGeneration(
-            @Path("id") String id
-    );
-    
+
     /**
      * Gets the full status and results of a text generation request.
      *

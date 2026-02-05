@@ -141,17 +141,6 @@ public class HordeClient implements AutoCloseable {
     }
     
     /**
-     * Checks the status of an image generation request.
-     *
-     * @param requestId The request ID from submitImageGeneration
-     * @return The status check result
-     * @throws HordeException if the request fails
-     */
-    public RequestStatusCheck checkImageGeneration(String requestId) {
-        return executeCall(api.checkImageGeneration(requestId));
-    }
-    
-    /**
      * Gets the full status and results of an image generation request.
      *
      * @param requestId The request ID
@@ -274,7 +263,7 @@ public class HordeClient implements AutoCloseable {
                 throw new HordeException("Generation timed out after " + generationTimeoutSeconds + " seconds");
             }
             
-            RequestStatusCheck status = checkImageGeneration(requestId);
+            RequestStatusStable status = getImageGenerationStatus(requestId);
             
             if (progressCallback != null) {
                 progressCallback.onProgress(
@@ -314,18 +303,7 @@ public class HordeClient implements AutoCloseable {
     public RequestAsync submitTextGeneration(GenerationInputKobold request) {
         return executeCall(api.generateTextAsync(apiKey, clientAgent, request));
     }
-    
-    /**
-     * Checks the status of a text generation request.
-     *
-     * @param requestId The request ID
-     * @return The status check result
-     * @throws HordeException if the request fails
-     */
-    public RequestStatusCheck checkTextGeneration(String requestId) {
-        return executeCall(api.checkTextGeneration(requestId));
-    }
-    
+
     /**
      * Gets the full status and results of a text generation request.
      *
@@ -449,7 +427,7 @@ public class HordeClient implements AutoCloseable {
                 throw new HordeException("Generation timed out after " + generationTimeoutSeconds + " seconds");
             }
             
-            RequestStatusCheck status = checkTextGeneration(requestId);
+            RequestStatusKobold status = getTextGenerationStatus(requestId);
             
             if (progressCallback != null) {
                 progressCallback.onProgress(

@@ -71,7 +71,7 @@ class HordeClientTest {
         String uuid = submitResponse.getId();
         assertNotNull(uuid);
 
-        RequestStatusCheck response = client.checkImageGeneration(uuid);
+        RequestStatusStable response = client.getImageGenerationStatus(uuid);
 
         assertNotNull(response);
         assertTrue(response.getWaiting() >= 0);
